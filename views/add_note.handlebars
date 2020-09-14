@@ -1,0 +1,66 @@
+<head>
+    <meta charset="utf-8" />
+</head>
+
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #77DDE7;">
+    <a class="navbar-brand" href="#">Спортивное приложение</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+
+            
+        </ul>
+         <form class="form-inline my-2 my-lg-0">
+            <button class="btn btn-outline-success my-2 my-sm-0" href="/mainPage">Выйти</button>
+        </form>
+    </div>
+</nav>
+
+<body>
+    <h1 style="text-align: center">Добавление</h1>
+        <div id="content">
+    <form action="add_note/insert" method="post">
+        <div class="container">
+				
+
+					<div class="custom-select">
+                        <label for="select_body"><b>Часть тела </b></label>
+                        <select id="select_body" name="select_body" required>
+                            {{# each listExerciseBody}}
+                            <option value={{this.exercisebodyid}}> {{this.nameofbody}} </option>
+
+                            {{/each}}
+                        </select>
+                     </div>
+					 
+					 <div class="custom-select">
+                        <label for="select_exercisename"><b>Название упражнения </b></label>
+                        <select id="select_exercisename" name="select_exercisename" required>
+                            {{# each listExerciseAll}}
+                            <option value={{this.exerciseallid}}> {{this.exercisename}} </option>
+
+                            {{/each}}
+                        </select>
+                     </div>
+					 
+					 <label for="numberpodhod"><b>Количество подходов </b></label>
+                    <input type="text" placeholder="Подходы" id="numberpodhod" name="numberpodhod" required>
+
+					 <label for="numberrepeated"><b>Количество повторений </b></label>
+                    <input type="text" placeholder="Повторения" id="numberrepeated" name="numberrepeated" required>
+
+					
+					 <div class="row">
+						<div class="col-md-4 col-md-push-8">
+							<button type="submit" class="btn btn-info">Добавить</button>
+							<input type="button" class="btn btn-info" onclick="history.back();" value="Назад"/>
+						</div>
+					</div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>

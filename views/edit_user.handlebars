@@ -1,0 +1,133 @@
+<head>
+    <meta charset="utf-8" />
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #77DDE7;">
+    <a class="navbar-brand" href="#">Спортивное приложение</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/mainPage">Домашняя страница <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/abonements">Абонементы</a>
+            </li>
+
+            
+        </ul>
+         <form class="form-inline my-2 my-lg-0">
+            <button class="btn btn-outline-success my-2 my-sm-0" href="/mainPage">Выйти</button>
+        </form>
+    </div>
+</nav>
+
+
+<h1 style="text-align: center">Редактирование пользователя</h1>
+
+<form action="edit_user/update" method="post">
+    <div class="container">
+
+
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><b>Имя и Фамилия</b></span>
+                </div>
+                <input type="text" aria-label="username" class="form-control" placeholder="Имя" id="username" name="username" value={{user.username}}>
+                <input type="text" aria-label="usersurname" class="form-control" placeholder="Фамилия" id="usersurname" name="usersurname" value={{user.usersurname}}>
+            </div>
+
+            <div class="row">
+                <div class="col-4">
+                    <div class="form-group">
+                        <label for="userrole"><b>Роль в системе</b></label>
+                        <select class="form-control" id="userrole" name="userrole">
+                                <option value="{{user.userrole}}">{{user.userrole}}</option>
+                                <option value="user">Пользователь</option>
+                                <option value="trainer">Тренер</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-4">
+                    <div class="form-group">
+                        <label for="userphone"><b>Телефон</b></label>
+                        <input type="text" class="form-control" id="userphone" name="userphone" value={{user.userphone}}>
+                    </div>
+                </div>
+
+                <div class="col-4">
+                    <div class="form-group">
+                        <label for="userbirthday"><b>День рождения</b></label>
+                        <input type="text" class="form-control" id="userbirthday" name="userbirthday" value={{user.userbirthday}}>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-4">
+                    <div class="form-group">
+                        <label for="abonident"><b>Номер абонемента (меняться не должен)</b></label>
+                        <input type="text" class="form-control" id="abonident" name="abonident" value={{user.abonid}}>
+                    </div>
+                </div>
+
+                <div class="col-4">
+                    <div class="form-group">
+                        <label for="abonstart"><b>Дата начала абонемента</b></label>
+                        <input type="text" class="form-control" id="abonstart" name="abonstart" value={{user.abonstart}}>
+                    </div>
+                </div>
+
+                <div class="col-4">
+                    <div class="form-group">
+                        <label for="abonend"><b>Дата окончания абонемента</b></label>
+                        <input type="text" class="form-control" id="abonend" name="abonend" value={{user.abonend}}>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="abontype"><b>Тип абонемента</b></label>
+                        <select class="form-control" id="abontype" name="abontype" required>
+                            <option value={{user.abontype}}>{{user.abontype}}</option>
+                            {{#listShape}}
+                                <option value={{this.shapeid}}> {{this.shapename}}</option>
+                            {{/listShape}}
+                        </select>
+                    </div>
+                </div>
+
+
+
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="abontrainer"><b>Тренер</b></label>
+                        <select class="form-control" id="abontrainer" name="abontrainer" required>
+                            <option value={{user.abontrainer}}>{{user.abontrainer}}</option>
+                            {{#listUser}}
+                                <option value={{this.userid}}> {{this.name}} {{this.surname}}</option>
+                            {{/listUser}}
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+        <div class="row">
+            <div class="col-md-4 col-md-push-8">
+                <button type="submit" class="btn btn-info">Изменить</button>
+                <input type="button" class="btn btn-info" onclick="history.back();" value="Назад"/>
+            </div>
+        </div>
+    </div>
+</form>
+</body>
+
+

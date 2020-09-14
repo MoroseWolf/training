@@ -1,0 +1,65 @@
+<head>
+	<style> 
+	</style>
+    <title>Страница упражнений по части тела</title>
+</head>
+
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #77DDE7;">
+    <a class="navbar-brand" href="#">Спортивное приложение</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+			<li class="nav-item">
+                <a class="nav-link" href="/exercise_body">Упражнения</a>
+            </li>
+            
+        </ul>
+         <form class="form-inline my-2 my-lg-0">
+            <button class="btn btn-outline-success my-2 my-sm-0" href="/mainPage">Выйти</button>
+        </form>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <table class="table table-hover" width="100%" bgcolor="#f8f8ff">
+        <thead>
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        {{#exercises}}
+
+            <tr>
+                {{#each this}}
+                    <td>
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">{{this.exercisename}}</h5>
+                                <p class="card-text">{{this.comment}}</p>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">{{this.complexity}}</li>
+                                </ul>
+                            </div>
+                            <div class="card-body">
+                                <a href="exercise_all/delete?id={{this.idd}}" class="card-link">Удалить</a>
+                                <a href="edit_exercise_all?id={{this.idd}}" class="card-link">Редактировать</a>
+                            </div>
+                        </div>
+                    </td>
+                {{/each}}
+            </tr>
+
+        {{/exercises}}
+        </tbody>
+    </table>
+
+
+<input type="button" class="btn btn-info" onclick="history.back();" value="Назад"/>
+<i><h4 style="text-align: center"><a class="nav-link active" href="add_exercise_all?id={{i}}">Добавить упражнение</a></h4></i>

@@ -1,0 +1,69 @@
+<head>
+    <meta charset="utf-8" />
+</head>
+
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #77DDE7;">
+    <a class="navbar-brand" href="#">Спортивное приложение</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/mainPage">Домашняя страница <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/abonements">Абонементы</a>
+            </li>
+			<li class="nav-item">
+                <a class="nav-link" href="/exercise_body">Упражнения</a>
+            </li>
+            
+        </ul>
+         <form class="form-inline my-2 my-lg-0">
+            <button class="btn btn-outline-success my-2 my-sm-0" href="/mainPage">Выйти</button>
+        </form>
+    </div>
+</nav>
+
+<body>
+
+<h2><p class="text-center">Добавление тренера</p></h2>
+    <div id="content">
+        <form action="add_trainer/insert" method="post">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-4">
+                    <label for="username"><b>Логин </b></label>
+                    <input type="text" placeholder="login" id="username" name="username" required>
+                        </div>
+
+                        <div class="col-4">
+                    <label for="username"><b>Пароль </b></label>
+                    <input type="text" placeholder="password" id="password" name="password" required>
+                        </div>
+
+                        <div class="col-4">
+                    <label for="name"><b>Имя</b></label>
+                    <input type="text" placeholder="name" id="name" name="name" required>
+                        </div>
+                    </div>
+
+
+                    <label for="username"><b>Фамилия</b></label>
+                    <input type="text" placeholder="surname" id="surname" name="surname" required>
+
+                    <label for="phone"><b>Телефон</b></label>
+                    <input type="text" placeholder="phone" id="phone" name="phone" required>
+
+                    <label for="date_of_birth"><b>День рождения</b></label>
+                    <input type="text" placeholder="dr" id="date_of_birth" name="date_of_birth" required>
+
+                    <button type="submit">Добавить тренера</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+

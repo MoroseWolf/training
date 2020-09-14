@@ -1,0 +1,75 @@
+<head>
+    <meta charset="utf-8" />
+</head>
+
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #77DDE7;">
+    <a class="navbar-brand" href="#">Спортивное приложение</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/mainPage">Домашняя страница <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/abonements">Абонементы</a>
+            </li>
+			<li class="nav-item">
+                <a class="nav-link" href="/exercise_body">Упражнения</a>
+            </li>
+            
+        </ul>
+         <form class="form-inline my-2 my-lg-0">
+            <button class="btn btn-outline-success my-2 my-sm-0" href="/mainPage">Выйти</button>
+        </form>
+    </div>
+</nav>
+
+<body>
+    <h1 style="text-align: center">Добавление пользователя</h1>
+        <form action="add_trainer/insert" method="post">
+                <div class="container">
+                    <label for="username"><b>Имя</b></label>
+                    <input type="text" placeholder="Имя" id="username" name="username" required>
+
+                    <label for="usersurname"><b>Фамилия</b></label>
+                    <input type="text" placeholder="usersurname" id="usersurname" name="usersurname" required>
+
+                    <label for="userphone"><b>Телефон</b></label>
+                    <input type="text" placeholder="userphone" id="userphone" name="userphone" required>
+
+                    <label for="date_of_birth"><b>День Рождения</b></label>
+                    <input type="text" placeholder="dr" id="date_of_birth" name="date_of_birth" required>
+
+                    <label for="ident"><b>ID</b></label>
+                    <input type="text" placeholder="Numar" id="ident" name="ident" required>
+
+                     <div class="custom-select">
+                        <label for="select_trainer"><b>Тренер: </b></label>
+                        <select id="select_trainer" name="select_trainer" required>
+                            {{# each listUser}}
+
+                            <option value={{this.userid}}> {{this.name}} {{this.surname}}</option>
+
+                            {{/each}}
+                        </select>
+                     </div>
+
+
+                     <div class="custom-select">
+                        <label for="select_abonement"><b>Абонемент: </b></label>
+                        <select id="select_abonement" name="select_abonement" required>
+                            {{# each listShape }}
+                             <option value={{this.shapeid }}> {{this.shapename}}</option>
+                            {{/each}}
+                        </select>
+                     </div>
+
+                    <button type="submit">Добавить пользователя</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>

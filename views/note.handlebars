@@ -1,0 +1,57 @@
+<head>
+	<style> 
+	</style>
+    <title>Запись в дневнике</title>
+</head>
+
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #77DDE7;">
+    <a class="navbar-brand" href="#">Спортивное приложение</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            
+
+        </ul>
+         <form class="form-inline my-2 my-lg-0">
+            <button class="btn btn-outline-success my-2 my-sm-0" href="/mainPage">Выйти</button>
+        </form>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <table class="table table-hover" width="100%" bgcolor="#f8f8ff">
+        <tbody>
+        <tr>
+            <th><p>Дата</th>
+            <th><p>Часть тела</th>
+            <th><p>Название упражнения</th>
+            <th><p>Количество подходов</th>
+            <th><p>Количество повторений</th>
+            <th><p>Сложность</th>
+            <th><p>Техника выполнения</th>
+			<th><p></th>	
+        </tr>
+        {{# each items }}
+            <tr>
+                <!-- <a href="exercise_all?id={{this.bodyid}}"/a> -->
+                <td>{{this.diarydate}}</td>
+                <td>{{this.name_of_body}}</td>
+                <td>{{this.exercisename}}</td>
+                <td>{{this.number_podhod}}</td>
+                <td>{{this.number_repeated}}</td>
+                <td>{{this.complexity}}</td>
+                <td>{{this.comment}}</td>
+				
+				<!-- <td><a style="color: black" href="edit_note?id={{this.noteid}}&id2={{this.diaryid}}">Редактировать</a></td> -->
+				<td><a type="button" class="btn btn-danger" href="note/delete?id={{this.noteid}}">х</a></td>
+
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+<i><h4><a class="nav-link active" href="add_note?id={{id2}}&id2={{id}}">Добавить запись</a></h4></i>
+<input type="button" class="btn btn-info" onclick="history.back();" value="Назад"/>
+</div>

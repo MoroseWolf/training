@@ -1,0 +1,13 @@
+<div class="masthead">
+  <nav>
+    <ul class="nav nav-justified">
+      
+      {{#if isAuthenticated}}
+        <li><a href="/users/dashboard">Dashboard</a></li>
+        <li><a href="/users/logout">Logout</a></li>
+      {{else}}
+        
+      {{/if}}
+    </ul>
+  </nav>
+</div>
